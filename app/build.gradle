@@ -1,8 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 20
-    buildToolsVersion "20.0.0"
+   // compileSdkVersion 20
+    // buildToolsVersion "20.0.0"
+    // http://stackoverflow.com/questions/26446610/android-gradle-project-upgrading-build-tools-to-21-0-1-aapt-throws-exception
+
+    compileSdkVersion 21
+    buildToolsVersion "21.0.2"
 
     defaultConfig {
         applicationId "com.javatechig.serviceexample"
@@ -13,7 +17,9 @@ android {
     }
     buildTypes {
         release {
-            runProguard false
+           // runProguard false
+            // http://stackoverflow.com/questions/27078075/gradle-dsl-method-not-found-runproguard
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
